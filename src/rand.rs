@@ -204,7 +204,7 @@ mod sysrand_chunk {
 
         // See `SYS_getrandom` in #include <sys/syscall.h>.
 
-        #[cfg(target_arch = "aarch64")]
+        #[cfg(any(target_arch = "aarch64", target_arch = "riscv64"))]
         const SYS_GETRANDOM: c_long = 278;
 
         #[cfg(target_arch = "arm")]
